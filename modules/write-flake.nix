@@ -63,7 +63,7 @@ let
 
   flakeInputs = "inputs = ${
     nixCode {
-      expr = flake-file.preProcess (inputsExpr flake-file.inputs);
+      expr = builtins.removeAttrs (flake-file.preProcess (inputsExpr flake-file.inputs)) [ "_unflake" ];
       styles = [
         {
           attrSortPriority = sortPriority.inputs;

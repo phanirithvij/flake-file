@@ -63,6 +63,7 @@ let
       rev = { };
       ref = { };
       host = { };
+      dedupRules = { };
       flake = {
         testEmpty = v: v;
         nonEmptyMerge = {
