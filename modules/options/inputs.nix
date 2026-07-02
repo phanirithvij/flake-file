@@ -109,6 +109,11 @@ let
           };
           follows = follows-option;
           inputs = inputs-follow-option;
+          dedupRules = lib.mkOption {
+            description = "unflake deduplication rules";
+            default = [];
+            type = lib.types.listOf lib.types.unspecified;
+          };
         };
       }
     );
